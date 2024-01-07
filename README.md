@@ -15,3 +15,8 @@ I am using a Makefile to automate shell commands to create and build the conda e
 ## Tackling Reproducible Environments
 
 I am using conda-lock to generate a concrete lock file of all the dependencies required by conda (and for Python and Poetry). This allows for reproducibility as the exact versions and download links used to create the environment are saved ([link to conda-lock GitHub](https://github.com/conda/conda-lock)).
+
+> ℹ️ Every time environment.yaml is changed, run the following command to ensure conda-lock.yml is refereshed:
+```bash
+make lock-conda
+```
