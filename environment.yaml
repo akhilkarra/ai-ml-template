@@ -1,0 +1,7 @@
+name: ai-ml-template
+channels:
+  - conda-forge
+  - nodefaults # Attempt to block default channels for conda env
+dependencies:
+  - python=3.11.5
+  - poetry=1.4.0
