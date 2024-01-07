@@ -8,7 +8,9 @@ env:
 	. ${CONDA}/etc/profile.d/conda.sh && \
 	conda activate $(env_name) && \
 	conda-lock install --name $(env_name) conda-lock.yml && \
-	poetry lock && poetry install
+	poetry lock && poetry install && \
+	pre-commit install && \
+	poetry run pre-commit run --all-files
 
 lock-conda:
 	. ${CONDA}/etc/profile.d/conda.sh && \
