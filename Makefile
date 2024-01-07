@@ -42,3 +42,9 @@ docs:
 	conda activate $(env_name) && \
 	. ${CONDA}/etc/profile.d/conda.sh && \
 	poetry run pdoc src -o pdoc/ --html --force
+
+data:
+	@echo "Setting up Data Version Control..." && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	mkdir -p /tmp/dvcstore
