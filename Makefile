@@ -1,3 +1,4 @@
+.PHONY: env tests lock-conda
 # If CONDA variable is not defined, create it
 CONDA?=${CONDA_PREFIX}
 env_name = ai-ml-template
@@ -28,3 +29,9 @@ poetry-test:
 
 poetry: poetry-dev poetry-test
 	poetry add numpy scipy pandas scikit-learn nltk matplotlib
+
+tests:
+	@echo "Running tests..." && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	poetry run pytest

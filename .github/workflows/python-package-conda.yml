@@ -21,3 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         make env
+    - name: Run tests
+      run: |
+        make tests
