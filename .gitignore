@@ -17,3 +17,6 @@ htmlcov/
 .coverage
 # pytest caches
 .pytest_cache/
+pdoc/
+# ruff caches
+.ruff_cache/

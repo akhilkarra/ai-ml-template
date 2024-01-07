@@ -1,4 +1,4 @@
-.PHONY: env tests lock-conda
+.PHONY: env tests lock-conda clean tests docs
 # If CONDA variable is not defined, create it
 CONDA?=${CONDA_PREFIX}
 env_name = ai-ml-template
@@ -35,3 +35,10 @@ tests:
 	. ${CONDA}/etc/profile.d/conda.sh && \
 	conda activate $(env_name) && \
 	poetry run pytest
+
+docs:
+	@echo "Creating documentation..." && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
+	poetry run pdoc src -o pdoc/ --html --force
