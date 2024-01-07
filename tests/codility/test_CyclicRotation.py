@@ -1,7 +1,6 @@
 import typing
 
 import pytest
-
 from codility.CyclicRotation import solution
 
 

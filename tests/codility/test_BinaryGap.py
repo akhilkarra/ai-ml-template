@@ -1,5 +1,4 @@
 import pytest
-
 from codility.BinaryGap import solution
 
 

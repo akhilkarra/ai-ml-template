@@ -1,7 +1,6 @@
 import typing
 
 import pytest
-
 from codility.OddOccurrences import solution
 
 
