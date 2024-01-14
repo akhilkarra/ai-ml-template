@@ -1,7 +1,7 @@
 .PHONY: env tests lock-conda clean tests docs data
 .DEFAULT_GOAL := tests
 # If CONDA variable is not defined, create it
-CONDA?=${CONDA_PREFIX}
+CONDA?=${CONDA_PREFIX_1}
 env_name = ai-ml-template
 python_version = 3.11.5
 
@@ -57,4 +57,25 @@ data:
 	@echo "IMPORTANT: Please make sure you activate your environment before running this target.\nSetting up Data Version Control (DVC)..." && \
 	dvc get https://github.com/iterative/dataset-registry \
           get-started/data.xml -o data/data.xml --force
+	@echo "Done!"
+
+create-books:
+	@echo "Creating jupyter-book books..."
+	${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	poetry run jupyter-book create notebooks
+	@echo "Done!"
+
+books:
+	@echo "Building jupyter-book books..."
+	${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	poetry run jupyter-book build notebooks
+	@echo "Done!"
+
+publish:
+	@echo "Publishing jupyter-book books..."
+	${CONDA}/etc/profile.d/conda.sh && \
+	conda activate $(env_name) && \
+	ghp-import -n -p -f notebooks/_build/html
 	@echo "Done!"
