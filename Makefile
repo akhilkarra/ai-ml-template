@@ -1,7 +1,7 @@
 .PHONY: env tests lock-conda clean tests docs data
 .DEFAULT_GOAL := tests
 # If CONDA variable is not defined, create it
-CONDA?=${CONDA_PREFIX}
+CONDA?=${CONDA_PREFIX_1}
 env_name = ai-ml-template
 python_version = 3.11.5
 
