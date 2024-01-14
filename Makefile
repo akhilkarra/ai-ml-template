@@ -61,21 +61,21 @@ data:
 
 create-books:
 	@echo "Creating jupyter-book books..."
-	${CONDA}/etc/profile.d/conda.sh && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
 	conda activate $(env_name) && \
 	poetry run jupyter-book create notebooks
 	@echo "Done!"
 
 books:
 	@echo "Building jupyter-book books..."
-	${CONDA}/etc/profile.d/conda.sh && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
 	conda activate $(env_name) && \
 	poetry run jupyter-book build notebooks
 	@echo "Done!"
 
 publish:
 	@echo "Publishing jupyter-book books..."
-	${CONDA}/etc/profile.d/conda.sh && \
+	. ${CONDA}/etc/profile.d/conda.sh && \
 	conda activate $(env_name) && \
 	ghp-import -n -p -f notebooks/_build/html
 	@echo "Done!"
