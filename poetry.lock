@@ -1171,34 +1171,41 @@ pgp = ["gpg"]
 
 [[package]]
 name = "dvc"
-version = "3.39.0"
+version = "3.49.0"
 description = "Git for data scientists - manage your code and data together"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "dvc-3.39.0-py3-none-any.whl", hash = "sha256:5cad62af58397b2a67ce64a938d05870af272f3fdf4ce92217164514232d61ad"},
-    {file = "dvc-3.39.0.tar.gz", hash = "sha256:878d3c89f1ece1d0f90d41d6e9b092d1d26a2416f7ab0acdf88db731c76df046"},
+    {file = "dvc-3.49.0-py3-none-any.whl", hash = "sha256:5122424debe4a4192cdae76918df4194153e61c7fa9224c0d82627d2786110c7"},
+    {file = "dvc-3.49.0.tar.gz", hash = "sha256:ab3779ef9a422e0a6734765a98f05cadaab7290de8726db023e0c14ec079031f"},
 ]
 
 [package.dependencies]
+attrs = ">=22.2.0"
+celery = "*"
 colorama = ">=0.3.9"
 configobj = ">=5.0.6"
 distro = ">=1.3"
 dpath = ">=2.1.0,<3"
-dvc-data = ">=3.7,<3.8"
+dulwich = "*"
+dvc-data = ">=3.15,<3.16"
 dvc-http = ">=2.29.0"
-dvc-render = ">=1.0.0,<2"
-dvc-studio-client = ">=0.17.1,<1"
+dvc-objects = "*"
+dvc-render = ">=1.0.1,<2"
+dvc-studio-client = ">=0.20,<1"
 dvc-task = ">=0.3.0,<1"
 flatten-dict = ">=0.4.1,<1"
 "flufl.lock" = ">=5,<8"
+fsspec = "*"
 funcy = ">=1.14"
 grandalf = ">=0.7,<1"
 gto = ">=1.6.0,<2"
 hydra-core = ">=1.1"
 iterative-telemetry = ">=0.0.7"
+kombu = "*"
 networkx = ">=2.5"
+omegaconf = "*"
 packaging = ">=19"
 pathspec = ">=0.10.3"
 platformdirs = ">=3.1.1,<4"
@@ -1209,7 +1216,7 @@ pyparsing = ">=2.4.7"
 requests = ">=2.22"
 rich = ">=12"
 "ruamel.yaml" = ">=0.17.11"
-scmrepo = ">=2.0.2,<3"
+scmrepo = ">=3,<4"
 shortuuid = ">=0.5"
 shtab = ">=1.3.4,<2"
 tabulate = ">=0.8.7"
@@ -1220,50 +1227,50 @@ voluptuous = ">=0.11.7"
 
 [package.extras]
 all = ["dvc[azure,gdrive,gs,hdfs,oss,s3,ssh,webdav,webhdfs]"]
-azure = ["dvc-azure (>=3,<4)"]
+azure = ["dvc-azure (>=3.1.0,<4)"]
 dev = ["dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs]"]
 gdrive = ["dvc-gdrive (>=3,<4)"]
 gs = ["dvc-gs (>=3,<4)"]
 hdfs = ["dvc-hdfs (>=3,<4)"]
-lint = ["mypy (==1.8.0)", "pandas-stubs", "types-colorama", "types-psutil", "types-pyinstaller", "types-requests", "types-tabulate", "types-toml", "types-tqdm"]
+lint = ["mypy (==1.9.0)", "pandas-stubs", "types-colorama", "types-psutil", "types-pyinstaller", "types-requests", "types-tabulate", "types-toml", "types-tqdm", "typing-extensions"]
 oss = ["dvc-oss (>=3,<4)"]
 s3 = ["dvc-s3 (>=3,<4)"]
-ssh = ["dvc-ssh (>=3,<4)"]
-ssh-gssapi = ["dvc-ssh[gssapi] (>=3,<4)"]
+ssh = ["dvc-ssh (>=4,<5)"]
+ssh-gssapi = ["dvc-ssh[gssapi] (>=4,<5)"]
 testing = ["pytest-benchmark[histogram]", "pytest-test-utils", "virtualenv"]
-tests = ["beautifulsoup4 (>=4.4)", "dvc-ssh", "dvc[testing]", "filelock", "flaky", "pandas (>=1)", "pytest (>=7,<8)", "pytest-cov (>=4.1.0)", "pytest-docker (>=1,<3)", "pytest-lazy-fixture", "pytest-mock", "pytest-test-utils", "pytest-timeout (>=2)", "pytest-xdist (>=3.2)", "pywin32 (>=225)", "sqlalchemy (>=1,<3)", "tzdata"]
+tests = ["beautifulsoup4 (>=4.4)", "dvc-ssh", "dvc[testing]", "filelock", "pandas (>=1)", "pytest (>=7,<9)", "pytest-cov (>=4.1.0)", "pytest-docker (>=1,<4)", "pytest-mock", "pytest-rerunfailures", "pytest-test-utils", "pytest-timeout (>=2)", "pytest-xdist (>=3.2)", "pywin32 (>=225)", "sqlalchemy (>=1,<3)", "tzdata"]
 webdav = ["dvc-webdav (>=3,<4)"]
 webhdfs = ["dvc-webhdfs (>=3.1,<4)"]
 webhdfs-kerberos = ["dvc-webhdfs[kerberos] (>=3.1,<4)"]
 
 [[package]]
 name = "dvc-data"
-version = "3.7.0"
+version = "3.15.1"
 description = "DVC's data management subsystem"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "dvc-data-3.7.0.tar.gz", hash = "sha256:a15d9b5cb24275020a00072c340fb0a7f3652434fa72ef0b0e87c7c8b7decccb"},
-    {file = "dvc_data-3.7.0-py3-none-any.whl", hash = "sha256:ab8bb2508a7da36d9746a3ea3d2c3ae1db91314d44881f410feae1b8e83ba078"},
+    {file = "dvc-data-3.15.1.tar.gz", hash = "sha256:db141bbbcf9e1ff37d9ff8657d04747e804899b90b4931b120f5d21bbd401583"},
+    {file = "dvc_data-3.15.1-py3-none-any.whl", hash = "sha256:e869825af922add091bc3e2de477ba0d05e847db402bb4044483600161f3a7a7"},
 ]
 
 [package.dependencies]
 attrs = ">=21.3.0"
 dictdiffer = ">=0.8.1"
 diskcache = ">=5.2.1"
-dvc-objects = ">=3,<4"
-funcy = ">=1.14"
+dvc-objects = ">=4.0.1,<6"
+fsspec = ">=2024.2.0"
+funcy = {version = ">=1.14", markers = "python_version < \"3.12\""}
 pygtrie = ">=2.3.2"
-shortuuid = ">=0.5.0"
 sqltrie = ">=0.11.0,<1"
 tqdm = ">=4.63.1,<5"
 
 [package.extras]
 all = ["dvc-data[cli]"]
 cli = ["rich (>=10.11.0,<14.0.0)", "typer[all] (>=0.6)"]
-dev = ["blake3 (>=0.3.1)", "dvc-data[all]", "dvc-data[tests]", "mypy (==1.7.1)", "types-tqdm"]
-tests = ["pytest (>=7,<8)", "pytest-benchmark (>=4)", "pytest-cov (>=4.1.0)", "pytest-mock", "pytest-servers[s3] (==0.1.3)", "pytest-sugar"]
+dev = ["blake3 (>=0.3.1)", "dvc-data[all]", "dvc-data[tests]", "mypy (==1.9.0)", "types-tqdm"]
+tests = ["pytest (>=7,<9)", "pytest-benchmark (>=4)", "pytest-cov (>=4.1.0)", "pytest-mock", "pytest-servers[s3] (==0.5.0)", "pytest-sugar"]
 
 [[package]]
 name = "dvc-http"
@@ -1286,53 +1293,53 @@ tests = ["dvc[testing]", "flaky (==3.7.0)", "mypy (==0.910)", "pylint (==2.15.9)
 
 [[package]]
 name = "dvc-objects"
-version = "3.0.6"
+version = "5.1.0"
 description = "dvc objects - filesystem and object-db level abstractions to use in dvc and dvc-data"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "dvc-objects-3.0.6.tar.gz", hash = "sha256:1df945658bea9292ddb71af1a367597568f6cfc4c4a47cca9e6cb34289e732e4"},
-    {file = "dvc_objects-3.0.6-py3-none-any.whl", hash = "sha256:c2512131a9b13bf4e656dba2e56ae308fa1137bbaa6ab046634e58bc463b154f"},
+    {file = "dvc-objects-5.1.0.tar.gz", hash = "sha256:22e919620f9ecf428a0d295efca8073d1c0e87206dd8e1f52b1d9520fa25b814"},
+    {file = "dvc_objects-5.1.0-py3-none-any.whl", hash = "sha256:c29b28f372674f53eca13323832d7b61c14bc29d516c39f6e87c5eba871a00ba"},
 ]
 
 [package.dependencies]
-fsspec = ">=2022.10.0"
+fsspec = ">=2024.2.0"
 funcy = {version = ">=1.14", markers = "python_version < \"3.12\""}
 
 [package.extras]
-dev = ["dvc-objects[tests]", "mypy (==1.8.0)", "tqdm (>=4.63.1,<5)", "types-tqdm", "typing-extensions (>=3.7.4)"]
+dev = ["dvc-objects[tests]", "mypy (==1.8.0)"]
 tests = ["pytest (>=7,<8)", "pytest-asyncio (>=0.23.2,<1)", "pytest-benchmark", "pytest-cov (>=4.1.0)", "pytest-mock", "pytest-sugar", "reflink"]
 
 [[package]]
 name = "dvc-render"
-version = "1.0.0"
-description = "DVC render"
+version = "1.0.1"
+description = "Dvc Render"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dvc-render-1.0.0.tar.gz", hash = "sha256:64be22457a92d7c7983de89cb5c4da2d27e289d10f4ee5d4c51ba885ad1c7762"},
-    {file = "dvc_render-1.0.0-py3-none-any.whl", hash = "sha256:08ffd17c1de07fce3440a7082c18f1d7f9dc156e44b42f982f28938fb27b1376"},
+    {file = "dvc-render-1.0.1.tar.gz", hash = "sha256:d7296869ea64c18ead9c99c46062ff116503b77a8d6e5c988f2d24716ea01d4a"},
+    {file = "dvc_render-1.0.1-py3-none-any.whl", hash = "sha256:a8704e2048cd698d5ee19a611619f4f0e9c0a8508a2af3652198a2cb79b7a279"},
 ]
 
 [package.extras]
-dev = ["flatten-dict (>=0.4.1,<1)", "funcy (>=1.17)", "matplotlib", "mkdocs (==1.5.2)", "mkdocs-gen-files (==0.5.0)", "mkdocs-material (==9.3.1)", "mkdocs-section-index (==0.3.6)", "mkdocstrings-python (==1.6.3)", "mypy (==0.981)", "pylint (==2.15.0)", "pytest (==7.2.0)", "pytest-cov (==3.0.0)", "pytest-mock (==3.8.2)", "pytest-sugar (>=0.9.6,<1.0)", "pytest-test-utils (>=0.0.6)", "tabulate (>=0.8.7)"]
+dev = ["dvc-render[docs]", "dvc-render[markdown]", "dvc-render[table]", "dvc-render[tests]"]
 docs = ["mkdocs (==1.5.2)", "mkdocs-gen-files (==0.5.0)", "mkdocs-material (==9.3.1)", "mkdocs-section-index (==0.3.6)", "mkdocstrings-python (==1.6.3)"]
-markdown = ["flatten-dict (>=0.4.1,<1)", "matplotlib", "tabulate (>=0.8.7)"]
+markdown = ["dvc-render[table]", "matplotlib"]
 table = ["flatten-dict (>=0.4.1,<1)", "tabulate (>=0.8.7)"]
-tests = ["flatten-dict (>=0.4.1,<1)", "funcy (>=1.17)", "matplotlib", "mypy (==0.981)", "pylint (==2.15.0)", "pytest (==7.2.0)", "pytest-cov (==3.0.0)", "pytest-mock (==3.8.2)", "pytest-sugar (>=0.9.6,<1.0)", "pytest-test-utils (>=0.0.6)", "tabulate (>=0.8.7)"]
+tests = ["dvc-render[markdown]", "dvc-render[table]", "mypy (==1.2.0)", "pytest (==7.2.0)", "pytest-cov (==3.0.0)", "pytest-mock (==3.8.2)", "pytest-sugar (==0.9.7)"]
 
 [[package]]
 name = "dvc-studio-client"
-version = "0.18.0"
+version = "0.20.0"
 description = "Small library to post data from DVC/DVCLive to Iterative Studio"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dvc-studio-client-0.18.0.tar.gz", hash = "sha256:41d2ee96bfb3784fad2d71508938197b0917445946090b3bb5ad53354fa35fcc"},
-    {file = "dvc_studio_client-0.18.0-py3-none-any.whl", hash = "sha256:eac41a74af46a313553b09948e0dc47d1be8ccfbea4513d54cd82bc32a480c4e"},
+    {file = "dvc-studio-client-0.20.0.tar.gz", hash = "sha256:a242e9c46297c689d65ff28d439b7c2e7535b641f09860f871b5628f7ae4bc42"},
+    {file = "dvc_studio_client-0.20.0-py3-none-any.whl", hash = "sha256:b9ee7c419a799ecdaeaf872114e6d664be1584822473fdf8aff43c961a3e2aa3"},
 ]
 
 [package.dependencies]
@@ -1341,9 +1348,9 @@ requests = "*"
 voluptuous = "*"
 
 [package.extras]
-dev = ["mkdocs (==1.5.3)", "mkdocs-gen-files (==0.5.0)", "mkdocs-material (==9.4.6)", "mkdocs-section-index (==0.3.8)", "mkdocstrings-python (==1.7.3)", "pytest (==7.4.2)", "pytest-cov (==4.1.0)", "pytest-mock (==3.12.0)", "pytest-sugar (==0.9.7)"]
-docs = ["mkdocs (==1.5.3)", "mkdocs-gen-files (==0.5.0)", "mkdocs-material (==9.4.6)", "mkdocs-section-index (==0.3.8)", "mkdocstrings-python (==1.7.3)"]
-tests = ["pytest (==7.4.2)", "pytest-cov (==4.1.0)", "pytest-mock (==3.12.0)", "pytest-sugar (==0.9.7)"]
+dev = ["dvc-studio-client[docs]", "dvc-studio-client[tests]", "types-requests"]
+docs = ["mkdocs (==1.5.3)", "mkdocs-gen-files (==0.5.0)", "mkdocs-material (==9.5.8)", "mkdocs-section-index (==0.3.8)", "mkdocstrings-python (==1.8.0)"]
+tests = ["mypy (==1.8.0)", "pytest (==8.0.0)", "pytest-cov (==4.1.0)", "pytest-mock (==3.12.0)", "pytest-sugar (==1.0.0)"]
 
 [[package]]
 name = "dvc-task"
@@ -1626,19 +1633,19 @@ files = [
 
 [[package]]
 name = "fsspec"
-version = "2023.12.2"
+version = "2024.3.1"
 description = "File-system specification"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fsspec-2023.12.2-py3-none-any.whl", hash = "sha256:d800d87f72189a745fa3d6b033b9dc4a34ad069f60ca60b943a63599f5501960"},
-    {file = "fsspec-2023.12.2.tar.gz", hash = "sha256:8548d39e8810b59c38014934f6b31e57f40c1b20f911f4cc2b85389c7e9bf0cb"},
+    {file = "fsspec-2024.3.1-py3-none-any.whl", hash = "sha256:918d18d41bf73f0e2b261824baeb1b124bcf771767e3a26425cd7dec3332f512"},
+    {file = "fsspec-2024.3.1.tar.gz", hash = "sha256:f39780e282d7d117ffb42bb96992f8a90795e4d0fb0f661a70ca39fe9c43ded9"},
 ]
 
 [package.dependencies]
 aiohttp = {version = "<4.0.0a0 || >4.0.0a0,<4.0.0a1 || >4.0.0a1", optional = true, markers = "extra == \"http\""}
-requests = {version = "*", optional = true, markers = "extra == \"http\""}
+tqdm = {version = "*", optional = true, markers = "extra == \"tqdm\""}
 
 [package.extras]
 abfs = ["adlfs"]
@@ -1655,7 +1662,7 @@ github = ["requests"]
 gs = ["gcsfs"]
 gui = ["panel"]
 hdfs = ["pyarrow (>=1)"]
-http = ["aiohttp (!=4.0.0a0,!=4.0.0a1)", "requests"]
+http = ["aiohttp (!=4.0.0a0,!=4.0.0a1)"]
 libarchive = ["libarchive-c"]
 oci = ["ocifs"]
 s3 = ["s3fs"]
@@ -1819,14 +1826,14 @@ test = ["objgraph", "psutil"]
 
 [[package]]
 name = "gto"
-version = "1.6.2"
+version = "1.7.1"
 description = "Version and deploy your models following GitOps principles"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "gto-1.6.2-py3-none-any.whl", hash = "sha256:22c65b2b2c9438fb2eb31c31f12a759e83d7ea02957a856836ba630ab007e7f2"},
-    {file = "gto-1.6.2.tar.gz", hash = "sha256:b422db71df9b3be8d03ab24620040a8c04cbfada1af371940076b5d9821c9ef4"},
+    {file = "gto-1.7.1-py3-none-any.whl", hash = "sha256:466c3e059aacc7eb3b7780a5f4b49e4a32001b059feb2b426d5b0737f7e71f72"},
+    {file = "gto-1.7.1.tar.gz", hash = "sha256:24100e735195c0d54539401f42804fc9042998276cdc4233f49f153fd38a7d75"},
 ]
 
 [package.dependencies]
@@ -1835,13 +1842,13 @@ funcy = "*"
 pydantic = ">=1.9.0,<2.0.0 || >2.0.0,<3"
 rich = "*"
 "ruamel.yaml" = "*"
-scmrepo = ">=1.4.0,<3"
-semver = ">=3.0.0"
+scmrepo = ">=3,<4"
+semver = ">=2.13.0"
 tabulate = ">=0.8.10"
 typer = ">=0.4.1"
 
 [package.extras]
-tests = ["freezegun", "pylint (==3.0.3)", "pylint-plugin-utils", "pytest", "pytest-cov", "pytest-lazy-fixture (==0.6.3)", "pytest-mock", "pytest-test-utils", "types-freezegun"]
+tests = ["freezegun", "pylint (==3.1.0)", "pylint-plugin-utils", "pytest", "pytest-cov", "pytest-mock", "pytest-test-utils", "types-freezegun"]
 
 [[package]]
 name = "hydra-core"
@@ -4020,38 +4027,37 @@ tests = ["black", "chardet", "tox"]
 
 [[package]]
 name = "pygit2"
-version = "1.13.3"
+version = "1.14.1"
 description = "Python bindings for libgit2."
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "pygit2-1.13.3-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:a3053850e29c1e102b1ab759d90b0dcc6402d7a434cbe810cfd2792294cf0ba6"},
-    {file = "pygit2-1.13.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2d2461db082c27231e2565e24e7ec3d6a60c7ceea5cda7364cb6eb81a6aedebd"},
-    {file = "pygit2-1.13.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2216dc34edbe44e37c5cabc5f1530266445b87c66038fc8b3e0e7be64b3d4edb"},
-    {file = "pygit2-1.13.3-cp310-cp310-win32.whl", hash = "sha256:5bc8c173ead087a4200e8763fad92105b4c9d40d03e007b9d9bbe47793716d31"},
-    {file = "pygit2-1.13.3-cp310-cp310-win_amd64.whl", hash = "sha256:c305adf3a86e02db8bcd89bb92e33e896a2ff36f58a5ad7ff15675491ab6a751"},
-    {file = "pygit2-1.13.3-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:8de720ca137624d8f98c8b8d57cdb1e461034adf3e158762ee5c3085620c8075"},
-    {file = "pygit2-1.13.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4a85521b8e218afd4111d5bd4e106d77ffaac7ecd9a1ed8c1eea9f8d9568d287"},
-    {file = "pygit2-1.13.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d7c5cb78cc0a88f5cb2910e85996f33fcac99994251117f00f2e344f84d2616a"},
-    {file = "pygit2-1.13.3-cp311-cp311-win32.whl", hash = "sha256:81686e3e06132f23eab32c6718c21930e8adda795c2ca76617f7562bff7b6b66"},
-    {file = "pygit2-1.13.3-cp311-cp311-win_amd64.whl", hash = "sha256:93cc7ffb403688c2ec3e169096f34b2b99bc709adc54487e9d11165cfd070948"},
-    {file = "pygit2-1.13.3-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:07b17f766c88ce1d05d264b5819e75ad261f3b60e33e4105a71f02467d0f6d39"},
-    {file = "pygit2-1.13.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:81bfe9ca394cdc896b632f18cd5f9c656a5f6c03c61deb1570b9081f2406776b"},
-    {file = "pygit2-1.13.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1c83e6e5ac357a9e87698c1eb25f430846f208bce12362d2209e7c9ac214e00c"},
-    {file = "pygit2-1.13.3-cp312-cp312-win32.whl", hash = "sha256:de481a2cee7ef98143109bd9d2b30690022aeb8ba849feeba082a3b48a53c214"},
-    {file = "pygit2-1.13.3-cp312-cp312-win_amd64.whl", hash = "sha256:0353b55f8bed1742dab15083ee9ee508ed91feb5c2563e2a612af277317030c6"},
-    {file = "pygit2-1.13.3-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:60152bb30bc2ab880d3c82f113be33aac7ced571d1148c51720ccefff9dfc9ce"},
-    {file = "pygit2-1.13.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bcf827ebe392e2181a50ebaf724947e30a1da076a74d8a6f9cec784158faced1"},
-    {file = "pygit2-1.13.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:73cb821acc5cc8ad62a96154d030ff47127073b56f71157e7c65b2e7ebb4d52f"},
-    {file = "pygit2-1.13.3-cp38-cp38-win32.whl", hash = "sha256:112c4efd421c3c8b4bb4406d3cd4a3a6a18a925c1f8b08d8a6dd0b591c6c6049"},
-    {file = "pygit2-1.13.3-cp38-cp38-win_amd64.whl", hash = "sha256:21f73fd2863b6b21b4fbfed11a42af0ac1036472bb3716944b42a9719beaf07e"},
-    {file = "pygit2-1.13.3-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:e94f2598bdf68340609bb21fd4d21213812913b40b73e5fcba67f4fb01f4fba4"},
-    {file = "pygit2-1.13.3-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5846aadb7b72802b3e4cb981f956965e92bc1692e7514ff4491bd7e24b20b358"},
-    {file = "pygit2-1.13.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2823d097b103740d52e600ef2079e23966583edbde08ac122279f1ab3b2c3979"},
-    {file = "pygit2-1.13.3-cp39-cp39-win32.whl", hash = "sha256:72fda35f88a3f5549eb9683c47ac73a6b674df943fc2490d93d539b46f518cbd"},
-    {file = "pygit2-1.13.3-cp39-cp39-win_amd64.whl", hash = "sha256:2087fd130181e4ba6b8599fcd406920781555a52a3f142bd1dec4de21b9c5792"},
-    {file = "pygit2-1.13.3.tar.gz", hash = "sha256:0257c626011e4afb99bdb20875443f706f84201d4c92637f02215b98eac13ded"},
+    {file = "pygit2-1.14.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:404d3d9bac22ff022157de3fbfd8997c108d86814ba88cbc8709c1c2daef833a"},
+    {file = "pygit2-1.14.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:141a1b37fc431d98b3de2f4651eab8b1b1b038cd50de42bfd1c8de057ec2284e"},
+    {file = "pygit2-1.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f35152b96a31ab705cdd63aef08fb199d6c1e87fc6fd45b1945f8cd040a43b7b"},
+    {file = "pygit2-1.14.1-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:ea505739af41496b1d36c99bc15e2bd5631880059514458977c8931e27063a8d"},
+    {file = "pygit2-1.14.1-cp310-cp310-win32.whl", hash = "sha256:793f49ce66640d41d977e1337ddb5dec9b3b4ff818040d78d3ded052e1ea52e6"},
+    {file = "pygit2-1.14.1-cp310-cp310-win_amd64.whl", hash = "sha256:46ae2149851d5da2934e27c9ac45c375d04af1e549f8c4cbb4e9e4de5f43dc42"},
+    {file = "pygit2-1.14.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:f5a87744e6c36f03fe488b975c73d3eaef22eadce433152516a2b8dbc4015233"},
+    {file = "pygit2-1.14.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0fff3d1aaf1d7372757888c4620347d6ad8b1b3a637b30a3abd156da7cf9476b"},
+    {file = "pygit2-1.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bc3326a5ce891ef26429ae6d4290acb80ea0064947b4184a4c4940b4bd6ab4a3"},
+    {file = "pygit2-1.14.1-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:15db91695259f672f8be3080eb943889f7c8bdc5fbd8b89555e0c53ba2481f15"},
+    {file = "pygit2-1.14.1-cp311-cp311-win32.whl", hash = "sha256:a03de11ba5205628996d867280e5181605009c966c801dbb94781bed55b740d7"},
+    {file = "pygit2-1.14.1-cp311-cp311-win_amd64.whl", hash = "sha256:9d96e46b94dc706e6316e6cc293c0a0692e5b0811a6f8f2738728a4a68d7a827"},
+    {file = "pygit2-1.14.1-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:8589c8c0005b5ba373b3b101f903d4451338f3dfc09f8a38c76da6584fef84d0"},
+    {file = "pygit2-1.14.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e4f371c4b7ee86c0a751209fac7c941d1f6a3aca6af89ac09481469dbe0ea1cc"},
+    {file = "pygit2-1.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f2378f9a70cea27809a2c78b823e22659691a91db9d81b1f3a58d537067815ac"},
+    {file = "pygit2-1.14.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:acb849cea89438192e78eea91a27fb9c54c7286a82aac65a3f746ea8c498fedb"},
+    {file = "pygit2-1.14.1-cp312-cp312-win32.whl", hash = "sha256:11058be23a5d6c1308303fd450d690eada117c564154634d81676e66530056be"},
+    {file = "pygit2-1.14.1-cp312-cp312-win_amd64.whl", hash = "sha256:67b6e5911101dc5ecb679bf241c0b9ee2099f4d76aa0ad66b326400cb4590afa"},
+    {file = "pygit2-1.14.1-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:c22027f748d125698964ed696406075dac85f114e01d50547e67053c1bb03308"},
+    {file = "pygit2-1.14.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7b6d1202d6a0c21281d2697321292aff9e2e2e195d6ce553efcdf86c2de2af1a"},
+    {file = "pygit2-1.14.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:230493d43945e10365070d349da206d39cc885ae8c52fdeca93942f36661dd93"},
+    {file = "pygit2-1.14.1-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:760614370fcce4e9606ff675d6fc11165badb59aaedc2ea6cb2e7ec1855616c2"},
+    {file = "pygit2-1.14.1-cp39-cp39-win32.whl", hash = "sha256:acc7be8a439274fc6227e33b63b9ec83cd51fa210ab898eaadffb7bf930c0087"},
+    {file = "pygit2-1.14.1-cp39-cp39-win_amd64.whl", hash = "sha256:ed16f2bc8ca9c42af8adb967c73227b1de973e9c4d717bd738fb2f177890ca2c"},
+    {file = "pygit2-1.14.1.tar.gz", hash = "sha256:ec5958571b82a6351785ca645e5394c31ae45eec5384b2fa9c4e05dde3597ad6"},
 ]
 
 [package.dependencies]
@@ -4227,6 +4233,7 @@ files = [
     {file = "PyYAML-6.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:bf07ee2fef7014951eeb99f56f39c9bb4af143d8aa3c21b1677805985307da34"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9"},
+    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef"},
     {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0"},
     {file = "PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4"},
     {file = "PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54"},
@@ -4879,32 +4886,31 @@ test = ["asv", "gmpy2", "mpmath", "pooch", "pytest", "pytest-cov", "pytest-timeo
 
 [[package]]
 name = "scmrepo"
-version = "2.0.3"
+version = "3.3.1"
 description = "scmrepo"
 category = "dev"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "scmrepo-2.0.3-py3-none-any.whl", hash = "sha256:39485c59269259b1571aee84eeac947d51d06e29160e66de2d74e69625de78d9"},
-    {file = "scmrepo-2.0.3.tar.gz", hash = "sha256:981fa5af7f73cb97490b0ceb56d9b4166cfd318f77ad5b9cf590687aea6ec1cb"},
+    {file = "scmrepo-3.3.1-py3-none-any.whl", hash = "sha256:da363c6eadb99f059fcdfb3e651ea62443b614b54cce193a17c0f369e22270fd"},
+    {file = "scmrepo-3.3.1.tar.gz", hash = "sha256:e347bf57f799887e3b788b90bfa275e901aafa7c5afbbb2eaaa1419bdfc5d63a"},
 ]
 
 [package.dependencies]
+aiohttp-retry = ">=2.5.0"
 asyncssh = ">=2.13.1,<3"
 dulwich = ">=0.21.6"
-dvc-http = ">=2.29.0"
-dvc-objects = ">=3,<4"
-fsspec = ">=2021.7.0"
+fsspec = {version = ">=2024.2.0", extras = ["tqdm"]}
 funcy = ">=1.14"
 gitpython = ">3"
 pathspec = ">=0.9.0"
-pygit2 = ">=1.13.3"
+pygit2 = ">=1.14.0"
 pygtrie = ">=2.3.2"
-shortuuid = ">=0.5.0"
+tqdm = "*"
 
 [package.extras]
-dev = ["scmrepo[tests]"]
-tests = ["mock (==5.1.0)", "mypy (==0.971)", "paramiko (==3.3.1)", "pytest (==7.2.0)", "pytest-asyncio (==0.18.3)", "pytest-cov (==3.0.0)", "pytest-docker (==0.12.0)", "pytest-mock (==3.8.2)", "pytest-sugar (==0.9.5)", "pytest-test-utils (==0.0.8)", "types-certifi (==2021.10.8.3)", "types-mock (==5.1.0.2)", "types-paramiko (==3.3.0.0)"]
+dev = ["mypy (==1.9.0)", "scmrepo[tests]", "types-certifi", "types-mock", "types-paramiko", "types-tqdm"]
+tests = ["aioresponses (>=0.7,<0.8)", "paramiko (>=3.4.0,<4)", "pytest (>=7,<9)", "pytest-asyncio (>=0.23.2,<1)", "pytest-cov (>=4.1.0)", "pytest-docker (>=1,<4)", "pytest-mock", "pytest-sugar", "pytest-test-utils (>=0.1.0,<0.2)"]
 
 [[package]]
 name = "semver"
